@@ -99,6 +99,42 @@
           }
         }
       }
+    },
+    "prismanote2": {
+      "projectType": "library",
+      "root": "projects/prismanote2",
+      "sourceRoot": "projects/prismanote2/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/prismanote2/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/prismanote2/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/prismanote2/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/prismanote2/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": "72b07b26-b709-4773-a20d-faa404d9f3ca"
   }
 }
