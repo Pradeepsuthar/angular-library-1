@@ -22,3 +22,41 @@ Run `ng test pn2-expose` to execute the unit tests via [Karma](https://karma-run
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+## How to use in your angular application?
+
+// app.component.html
+
+`<pn2-tabs (activeTabChanged)="activeTabsChanged($event)">
+    <ng-container *ngFor="let tab of tabTitles;">
+        <pn2-tab tabTitle="{{tab.title}}" key="{{tab.key}}">
+            Tab for {{tab.title}}
+        </pn2-tab>
+    </ng-container>
+</pn2-tabs>
+`
+
+// app.component.ts
+
+`
+
+tabTitles: any[] = [
+    { title: "Purchase orders", key: 'purchases', active: true },
+    { title: "Statistics", key: 'coreStatistics', active: false },
+    { title: "Contact persons", key: 'contactPersons', active: false },
+    { title: 'Premium graphs', key: 'statistics-graph', active: false },
+];
+
+`
+
+if your want to access active tab use this method.
+
+`
+
+activeTabsChanged(tab: any) {
+    console.log("active tab : ",tab);
+}
+
+`

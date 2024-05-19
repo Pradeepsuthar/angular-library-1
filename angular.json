@@ -104,7 +104,7 @@
       "projectType": "library",
       "root": "projects/prismanote2",
       "sourceRoot": "projects/prismanote2/src",
-      "prefix": "lib",
+      "prefix": "pn2",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

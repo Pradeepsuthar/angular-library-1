@@ -1,6 +1,25 @@
-<h1>Prismanote2</h1>
+<h1 class="my-4">Prismanote2</h1>
 
+<h1 class="my-4">Button</h1>
 <div>
     <pn2-button [style]="{'margin-right': '5px'}" (click)="onClick('submit')">Save & Submit</pn2-button>
     <pn2-button (click)="onClick('save')">Save & Continue</pn2-button>
+    <pn2-button (click)="onClick('save')">
+        
+        User
+    
+        <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20101%20101%22%3E%3Cpath%20d%3D%22M50.4%2054.5c10.1%200%2018.2-8.2%2018.2-18.2S60.5%2018%2050.4%2018s-18.2%208.2-18.2%2018.2%208.1%2018.3%2018.2%2018.3zm0-31.7c7.4%200%2013.4%206%2013.4%2013.4s-6%2013.4-13.4%2013.4S37%2043.7%2037%2036.3s6-13.5%2013.4-13.5zM18.8%2083h63.4c1.3%200%202.4-1.1%202.4-2.4%200-12.6-10.3-22.9-22.9-22.9H39.3c-12.6%200-22.9%2010.3-22.9%2022.9%200%201.3%201.1%202.4%202.4%202.4zm20.5-20.5h22.4c9.2%200%2016.7%206.8%2017.9%2015.7H21.4c1.2-8.9%208.7-15.7%2017.9-15.7z%22%2F%3E%3C%2Fsvg%3E" alt="logo" style="width: 28px;
+        margin: 0 0 0 8px;
+        filter: invert(1);">
+    </pn2-button>
 </div>
+
+
+<h1 class="my-4">Tabs</h1>
+<pn2-tabs (activeTabChanged)="activeTabsChanged($event)">
+    <ng-container *ngFor="let tab of tabTitles;">
+        <pn2-tab tabTitle="{{tab.title}}" key="{{tab.key}}">
+            Tab for {{tab.title}}
+        </pn2-tab>
+    </ng-container>
+</pn2-tabs>
