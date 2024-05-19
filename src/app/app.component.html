@@ -23,3 +23,16 @@
         </pn2-tab>
     </ng-container>
 </pn2-tabs>
+
+
+
+<h1 class="my-4">Dynamic Form</h1>
+<div style="width: 50%;margin: 0 auto;">
+    <dynamic-form-builder
+    [fields]="formFields"
+    [isSubmit]="isSubmit"
+    (onSubmit)="onSubmit($event)"
+    ></dynamic-form-builder>
+    <br>
+    <pn2-button (click)="confirm()">Submit</pn2-button>
+</div>
