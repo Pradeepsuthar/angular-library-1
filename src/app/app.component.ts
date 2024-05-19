@@ -15,30 +15,40 @@ export class AppComponent {
     { title: 'Premium graphs', key: 'statistics-graph', active: false },
   ];
 
-  onClick(type:string){
+  onClick(type: string) {
     console.log("clicked", type);
-    if(type==='formSubmit'){
+    if (type === 'formSubmit') {
       console.log("Form data:", this.formData)
     }
   }
 
   activeTabsChanged(tab: any) {
-    console.log("active tab",tab);
+    console.log("active tab", tab);
   }
 
-
-
-
-
-
-  servicesType:any[] = [
+  servicesType: any[] = [
     {
       key: 1,
       label: 'Test data one',
     }
   ]
 
-  formFields:any[] = [
+  genderOptions: any[] = [
+    {
+      key: 'male',
+      label: 'Male',
+    },
+    {
+      key: 'female',
+      label: 'Female',
+    },
+    {
+      key: 'other',
+      label: 'Other',
+    },
+  ]
+
+  formFields: any[] = [
     {
       type: 'text',
       name: 'name',
@@ -81,6 +91,38 @@ export class AppComponent {
       required: false,
     },
     {
+      type: 'radio',
+      name: 'pan',
+      label: 'Do you have Pan card?',
+      value: '',
+      required: false,
+      options: [
+        {
+          key: 'yes',
+          label: 'Yes'
+        },
+        {
+          key: 'no',
+          label: 'No'
+        },
+      ],
+    },
+    {
+      type: 'dropdown',
+      name: 'gender',
+      label: 'Gender',
+      value: '',
+      required: true,
+      options: this.genderOptions,
+    },
+    {
+      type: 'datetime',
+      name: 'startDate',
+      label: 'Start Date & Time',
+      value: '',
+      required: true,
+    },
+    {
       type: 'text',
       name: 'remark',
       label: 'Remark',
@@ -89,13 +131,11 @@ export class AppComponent {
     },
   ];
 
-
   isSubmit: boolean = false;
-  formData:any = {};
+  formData: any = {};
   onSubmit(data: any) {
-   this.formData = data;
+    this.formData = data;
   }
-
 
   confirm(): void {
     this.isSubmit = !this.isSubmit;
@@ -105,6 +145,5 @@ export class AppComponent {
       }, 1000);
     }
   }
-
 
 }

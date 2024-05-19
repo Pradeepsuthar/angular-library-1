@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 
 @Component({
-    selector: 'dropdown',
-    template: `
-    <div [formGroup]="form" style="margin: 20px 0;">
+  selector: 'dropdown',
+  template: `
+    <div [formGroup]="form" style="margin: 20px 0; width: 108% !important">
       <select
         class="dynamic-form-control"
         [id]="field.name"
@@ -12,12 +12,8 @@ import { UntypedFormGroup } from '@angular/forms';
         *ngIf="!field.isMultiple"
         [disabled]="field.isDisabled"
       >
-        <option value="" selected *ngIf="!field?.isMultiple">
-          Choose {{ field.name }}
-        </option>
-        <option *ngFor="let opt of field.options" [value]="opt.key">
-          {{ opt.label }}
-        </option>
+        <option value="" selected *ngIf="!field?.isMultiple">Choose {{ field.name }}</option>
+        <option *ngFor="let opt of field.options" [value]="opt.key">{{ opt.label }}</option>
       </select>
 
       <select
@@ -37,7 +33,7 @@ import { UntypedFormGroup } from '@angular/forms';
       </select>
     </div>
   `,
-    styles: [`
+  styles: [`
     .dynamic-form-control {
         width: 100%;
         display: block;
@@ -62,8 +58,8 @@ import { UntypedFormGroup } from '@angular/forms';
   `]
 })
 export class DropDownComponent {
-    @Input() field: any = {};
-    @Input() form!: UntypedFormGroup;
+  @Input() field: any = {};
+  @Input() form!: UntypedFormGroup;
 
-    constructor() { }
+  constructor() { }
 }

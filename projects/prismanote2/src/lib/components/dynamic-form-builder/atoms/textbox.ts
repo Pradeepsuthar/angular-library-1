@@ -3,8 +3,8 @@ import { UntypedFormGroup } from '@angular/forms';
 
 // text,email,tel,textarea,password,
 @Component({
-    selector: 'textbox',
-    template: `
+  selector: 'textbox',
+  template: `
     <div [formGroup]="form" style="margin: 20px 0;">
       <input
         *ngIf="!field.multiline"
@@ -48,18 +48,17 @@ import { UntypedFormGroup } from '@angular/forms';
         border-color: #3ba68c;
     }
   }
-
   `]
 })
 export class TextBoxComponent {
-    @Input() field: any = {};
-    @Input() form!: UntypedFormGroup;
-    get isValid() {
-        return this.form.controls[this.field.name].valid;
-    }
-    get isDirty() {
-        return this.form.controls[this.field.name].dirty;
-    }
+  @Input() field: any = {};
+  @Input() form!: UntypedFormGroup;
+  get isValid() {
+    return this.form.controls[this.field.name].valid;
+  }
+  get isDirty() {
+    return this.form.controls[this.field.name].dirty;
+  }
 
-    constructor() { }
+  constructor() { }
 }

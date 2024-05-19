@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 
 @Component({
-    selector: 'checkbox',
-    template: `
+  selector: 'checkbox',
+  template: `
     <div [formGroup]="form">
       <div [formGroupName]="field.name">
         <div *ngFor="let opt of field.options" class="form-check form-check">
@@ -15,20 +15,20 @@ import { UntypedFormGroup } from '@angular/forms';
               id="inlineCheckbox1"
               value="option1"
             />
-            {{ opt.label }}</label
-          >
+            {{ opt.label }}
+          </label>
         </div>
       </div>
     </div>
   `,
 })
 export class CheckBoxComponent {
-    @Input() field: any = {};
-    @Input() form!: UntypedFormGroup;
-    get isValid() {
-        return this.form.controls[this.field.name].valid;
-    }
-    get isDirty() {
-        return this.form.controls[this.field.name].dirty;
-    }
+  @Input() field: any = {};
+  @Input() form!: UntypedFormGroup;
+  get isValid() {
+    return this.form.controls[this.field.name].valid;
+  }
+  get isDirty() {
+    return this.form.controls[this.field.name].dirty;
+  }
 }
