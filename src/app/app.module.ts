@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { Prismanote2Module } from 'dist/Prismanote2';
 import { CommonModule } from '@angular/common';
 
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,8 +16,13 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    Prismanote2Module
+    Prismanote2Module,
+    NgxDaterangepickerMd.forRoot({
+      separator: ' / ',
+      applyLabel: 'apply',
+  })
   ],
   providers: [],
   bootstrap: [AppComponent]

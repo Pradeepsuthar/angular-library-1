@@ -16,6 +16,7 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "prismanote2": [
         "dist/prismanote2"

@@ -1,4 +1,4 @@
-.btn{
+.btn {
     padding: 20px;
     border: 1px solid red;
     background: green;
@@ -7,4 +7,20 @@
 
 .my-4 {
     margin: 5% 0;
+}
+
+.special-date {
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.special-date .label {
+    font-size: 0.75rem;
+    color: green;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    padding: 2px;
+    border-radius: 3px;
 }
